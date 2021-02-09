@@ -3,14 +3,13 @@ require 'vendor/autoload.php';
 
 use GuzzleHttp\Client;
 // 各変数の定義
-$KEYID="メールに記載されていたアクセスキーをここに入力";
+$KEYID="f78811949d0a0fff24892518995269f5";
 $HIT_PER_PAGE = 100;
 $PREF = "PREF13";
 $FREEWORD_CONDITION =1;
 $FREWORD = "渋谷駅";
 
 $PARAMS = array("keyid"=> $KEYID, "hit_per_page"=>$HIT_PER_PAGE, "pref"=>$PREF, "freeword_condition"=>$FREEWORD_CONDITION, "freeword"=>$FREWORD);
-
 // 関数の定義引数＄params/
 function write_data_to_csv($params){
 
@@ -41,7 +40,11 @@ function write_data_to_csv($params){
         $handle = fopen("restaurants_list.csv","wb");
         fputcsv($handle,$restaurants);
         fclose($handle);
+
         return print_r($restaurants);
+
+        
+    
 
 
     }
